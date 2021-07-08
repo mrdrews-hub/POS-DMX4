@@ -3,6 +3,7 @@
         <div class="section-header">
             <h1><?= ucfirst($page)  ?> Service</h1>
         </div>
+        <?php var_dump($row) ?>
         <div class="card">
         <div class="card-header">
                 <h2 class="section-title">Form Service</h2>

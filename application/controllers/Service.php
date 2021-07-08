@@ -74,8 +74,21 @@ class Service extends CI_Controller {
         if($this->db->affected_rows() > 0 ){
             $this->session->set_flashdata('success', 'Data Berhasil Disimpan!');
             redirect('service/in');
-            }
-        
+            }   
+    }
+
+    public function cetakTiket()
+    {
+        $post = new stdClass();
+        $post->customer = $this->input->post('customer');
+        $post->perangkat = $this->input->post('perangkat');
+        $post->notelp = $this->input->post('noTelp');
+        $post->keluhan = $this->input->post('keluhan');
+        $post->admin = $this->input->post('admin');
+        $data = [
+            'row' => $post
+        ];
+        $this->load->view('service/service_in/tiket.php',$data);
     }
   /*  public function cetak_struk() {
         // me-load library escpos

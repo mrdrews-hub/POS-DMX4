@@ -161,8 +161,8 @@
 						<table>
 							<tr>
 								<td>
-                                    JL.Cinehel no.10.<br />
-									Kec.Cipedes Kel.Cipedes Kota Tasikmalaya<br />
+                                    JL.Cinehel no.10.<br/>
+									Kec.Cipedes Kel.Cipedes Kota Tasikmalaya<br/>
 									Telp.081281241701
 								</td>
 							</tr>

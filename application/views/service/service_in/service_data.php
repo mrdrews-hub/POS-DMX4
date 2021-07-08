@@ -83,33 +83,36 @@
         </button>
       </div>
       <div class="modal-body">
+        <form action="<?= site_url('Service/cetakTiket')?>" method="POST">
         <div class="row">
+              <input type="hidden" name="admin" id="adminHide">
+              
 
             <div class="col-md-12">
             <div class="form-group">
             <label for="customer">Nama Customer</label>
-            <input class="form-control" type="text" id="customer" readonly>
+            <input class="form-control" type="text" id="customer" name="customer" readonly>
             </div>
             </div>
            
             <div class="col-md-7">
             <div class="form-group">
             <label for="perangkat">Perangkat</label>
-            <input class="form-control" type="text" id="perangkat" readonly>
+            <input class="form-control" type="text" id="perangkat" name="perangkat" readonly>
             </div>
 
             </div>
             <div class="col-md-5">
             <div class="form-group">
             <label for="no_telp">No Telp</label>
-            <input class="form-control" type="number" id="no_telp" readonly>
+            <input class="form-control" type="number" id="no_telp" name="noTelp" readonly>
             </div>
             </div>
 
             <div class="col-md-12">
             <div class="form-group">
             <label for="keluhan">Keluhan</label>
-            <input class="form-control" type="text" id="keluhan" readonly>
+            <input class="form-control" type="text" id="keluhan" name="keluhan" readonly>
             </div>
             </div>
 
@@ -140,7 +143,13 @@
         </div>
       <div class="modal-footer d-flex justify-content-between">
          <h6>Nama Admin : <span id="admin"></span></h6>
+         <button type="submit" class="btn btn-success" name="submitTiket"
+         data-toggle="tooltip" 
+         data-placement="top" title="Print Tiket" data-original-title="Print Tiket">
+         <i class="fas fa-print"></i>
+        </button>
       </div>
+      </form>                                
     </div>
   </div>
 </div>
@@ -167,6 +176,7 @@ $(document).ready(function(){
         $('#jasa').val(jasa);
         $('#date').html(created);
         $('#admin').html(admin);
+        $('#adminHide').val(admin);
 
         $('#modal-item').modal('hide');
 
