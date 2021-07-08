@@ -129,7 +129,8 @@ echo $ket; ?></h2>
                                     $('#form-bulan, #form-tahun').show(); // Tampilkan form bulan dan tahun
                                     $('#filterBln, #filterThn').attr('required',true);//tambah required
                                 }else{ // Jika filternya 3 (per tahun)
-                                    $('#form-tanggal, #form-bulan').hide(); // Sembunyikan form tanggal dan bulan
+                                  $('#form-tanggal, #form-bulan').hide(); // Sembunyikan form tanggal dan bulan
+                                  $('#form-tanggal, #form-bulan').removeAttr('required',true)// Hapus required form tanggal dan bulan
                                     $('#filterThn').attr('required',true); // Tampilkan form tahun
                                     $('#form-tahun').show(); // Tampilkan form tahun
                                 }

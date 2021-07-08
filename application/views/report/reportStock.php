@@ -22,7 +22,7 @@
                       <div class="form-group col-md-2 mb-4">
                         <div id="form-tanggal">
                             <label>Tanggal</label>
-                            <input type="text" name="tanggal" class="form-control border-primary input-tanggal">
+                            <input type="text" name="tanggal" class="form-control border-primary input-tanggal" id="filterTgl">
                         </div>
                       </div>
             </div>
@@ -31,7 +31,7 @@
                       <div class="form-group col-md-2 mb-4">
                         <div id="form-bulan">
                             <label>Bulan</label>
-                              <select class="form-control" name="bulan">
+                              <select class="form-control" name="bulan" id="filterBln">
                                   <option value="">Pilih</option>
                                   <option value="1">Januari</option>
                                   <option value="2">Februari</option>
@@ -111,14 +111,20 @@
                                   $('#form-tanggal, #form-bulan, #form-tahun').hide();
                                 }
                                 else if($(this).val() == '1'){ // Jika filter nya 1 (per tanggal)
+                                    $('#filterBln').removeAttr('required',true); // Sembunyikan required form bulan dan tahun
                                     $('#form-bulan, #form-tahun').hide(); // Sembunyikan form bulan dan tahun
                                     $('#form-tanggal').show();// Tampilkan form tanggal
+                                    $('#filterTgl').attr('required',true);// Tampilkan form tanggal
                                 }else if($(this).val() == '2'){ // Jika filter nya 2 (per bulan)
+                                    $('#filterTgl').removeAttr('required',true); // Sembunyikan required form tanggal
                                     $('#form-tanggal').hide(); // Sembunyikan form tanggal
                                     $('#form-bulan, #form-tahun').show(); // Tampilkan form bulan dan tahun
+                                    $('#filterBln').attr('required',true); // Tampilkan form bulan dan tahun
                                 }else{ // Jika filternya 3 (per tahun)
+                                    $('#form-tanggal, #form-bulan').removeAttr('required',true); // Sembunyikan required form tanggal dan bulan
                                     $('#form-tanggal, #form-bulan').hide(); // Sembunyikan form tanggal dan bulan
                                     $('#form-tahun').show(); // Tampilkan form tahun
+                                    $('#form-tahun').attr('required',true); // Tampilkan required form tahun
                                 }
 
                                 $('#form-tanggal input, #form-bulan select, #form-tahun select').val(''); // Clear data pada textbox tanggal, combobox bulan & tahun
