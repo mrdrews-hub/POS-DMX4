@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2021 at 06:48 AM
+-- Generation Time: Jul 10, 2021 at 07:26 AM
 -- Server version: 10.4.8-MariaDB-log
 -- PHP Version: 7.3.11
 
@@ -76,7 +76,17 @@ INSERT INTO `penjualan` (`id_penjualan`, `invoice`, `item`, `price`, `qty`, `sub
 (74, 'TR2105270015', 'Vortex Series VX 7 PRO', 350000, 2, 700000, '2021-05-27'),
 (75, 'TR2105270016', 'Vortex Series VX 7 PRO', 350000, 2, 700000, '2021-05-27'),
 (76, 'TR2105270017', 'Vortex Series VX 7 PRO', 350000, 2, 700000, '2021-05-27'),
-(77, 'TR2105270018', 'Vortex Series VX 7 PRO', 350000, 2, 700000, '2021-05-27');
+(77, 'TR2105270018', 'Vortex Series VX 7 PRO', 350000, 2, 700000, '2021-05-27'),
+(78, 'TR2107080001', 'Flash', 35000, 1, 35000, '2021-07-08'),
+(79, 'TR2107080001', 'Kuota XL 21 GB', 65000, 1, 65000, '2021-07-08'),
+(80, 'TR2107090001', 'Install ulang', 40000, 2, 80000, '2021-07-09'),
+(81, 'TR2107090002', 'Kuota Axis 15GB', 40000, 1, 40000, '2021-07-09'),
+(82, 'TR2107100001', 'Ganti lcd', 150000, 1, 150000, '2021-07-10'),
+(83, 'TR2107100001', 'Headset Samsung', 20000, 1, 20000, '2021-07-10'),
+(84, 'TR2107100001', 'Xiaomi Headset', 40000, 1, 40000, '2021-07-10'),
+(85, 'TR2107100001', 'Kuota XL 21 GB', 65000, 1, 65000, '2021-07-10'),
+(86, 'TR2107100002', 'Ganti lcd', 150000, 1, 150000, '2021-07-10'),
+(87, 'TR2107100002', 'KZ-ZSN PRO', 120000, 1, 120000, '2021-07-10');
 
 -- --------------------------------------------------------
 
@@ -99,10 +109,10 @@ INSERT INTO `p_category` (`category_id`, `nama_category`, `created`, `updated`) 
 (2, 'Voucher', '2021-03-14 20:43:51', NULL),
 (3, 'Token', '2021-03-14 21:29:51', NULL),
 (4, 'Pulsa', '2021-03-15 13:06:47', NULL),
-(5, 'Wifi', '2021-03-15 13:10:16', '2021-03-28 12:39:21'),
 (6, 'Memori', '2021-03-17 20:09:30', NULL),
 (7, 'Laptop', '2021-03-17 20:10:21', NULL),
-(8, 'Keyboard', '2021-03-17 20:24:32', '2021-03-28 12:41:04');
+(8, 'Keyboard', '2021-03-17 20:24:32', '2021-03-28 12:41:04'),
+(16, 'Headset', '2021-07-09 13:38:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -127,16 +137,20 @@ CREATE TABLE `p_item` (
 --
 
 INSERT INTO `p_item` (`item_id`, `barcode`, `nama_item`, `category_id`, `unit_id`, `price`, `stock`, `created`, `updated`) VALUES
-(1, 'DMX0001', 'Kuota XL 21 GB', 2, 1, 65000, 14, '2021-03-15 11:43:25', '2021-03-29 09:33:50'),
+(1, 'DMX0001', 'Kuota XL 21 GB', 2, 1, 65000, 12, '2021-03-15 11:43:25', '2021-03-29 09:33:50'),
 (4, 'DMX0002', 'Token Listrik', 3, 2, 120000, 0, '2021-03-15 12:22:20', '2021-03-15 06:33:12'),
-(5, 'DMX0003', 'KZ ZSN-PRO Wireless', 5, 2, 150000, 10, '2021-03-15 13:09:59', '2021-03-17 14:15:49'),
 (8, 'DMX0005', 'Vortex Series VX 7 PRO', 8, 2, 350000, 10, '2021-03-16 11:39:27', '2021-03-17 14:24:44'),
-(10, 'DMX0007', 'Kuota XL 100 GB', 2, 1, 150000, 16, '2021-03-17 20:21:04', NULL),
+(10, 'DMX0007', 'Kuota XL 60 GB', 2, 2, 160000, 16, '2021-03-17 20:21:04', '2021-07-09 08:36:38'),
 (11, 'DMX0008', 'Kuota Axis 50GB', 2, 2, 78000, 19, '2021-03-17 20:23:14', NULL),
 (13, 'DMX0010', 'VGEN 32GB', 6, 2, 90000, 7, '2021-03-17 20:26:44', NULL),
 (14, 'DMX0011', 'Samsung 16GB', 6, 2, 45000, 22, '2021-03-17 20:27:19', NULL),
-(15, 'DMX0012', 'HyperX Cloud alpha', 5, 3, 1200000, 3, '2021-03-17 20:28:18', '2021-03-23 08:30:47'),
-(16, 'DMX0013', 'SteelSeries Arctis 7', 5, 3, 2100000, 1, '2021-03-17 20:29:01', NULL);
+(17, 'DMX0012', 'Kuota Telkomsel 10 GB', 2, 2, 70000, 12, '2021-07-09 13:37:30', NULL),
+(18, 'DMX0013', 'Headset Samsung', 16, 3, 20000, 3, '2021-07-09 13:38:58', NULL),
+(19, 'DMX0014', 'KZ-ZSN PRO', 16, 3, 120000, 6, '2021-07-09 13:39:20', NULL),
+(20, 'DMX0015', 'Kuota XL 13GB', 2, 2, 30000, 0, '2021-07-09 13:39:48', NULL),
+(21, 'DMX0016', 'Kuota Axis 15GB', 2, 2, 40000, 12, '2021-07-09 13:40:25', NULL),
+(22, 'DMX003', 'VGEN 16GB', 6, 3, 40000, 0, '2021-07-10 11:53:03', NULL),
+(23, 'DMX0030', 'Xiaomi Headset', 16, 3, 40000, 11, '2021-07-10 11:53:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -169,6 +183,7 @@ INSERT INTO `p_unit` (`unit_id`, `nama_unit`, `created`, `updated`) VALUES
 CREATE TABLE `serv_data` (
   `service_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `kode_service` varchar(15) NOT NULL,
   `customer` varchar(50) NOT NULL,
   `no_telp` varchar(16) NOT NULL,
   `perangkat` varchar(30) NOT NULL,
@@ -179,6 +194,14 @@ CREATE TABLE `serv_data` (
   `jasa` int(11) DEFAULT NULL,
   `created` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `serv_data`
+--
+
+INSERT INTO `serv_data` (`service_id`, `user_id`, `kode_service`, `customer`, `no_telp`, `perangkat`, `keluhan`, `status`, `keterangan`, `harga`, `jasa`, `created`) VALUES
+(23, 1, 'SV2107100001', 'Bambang', '0877251623', 'Redmi A7x', 'Layar retak', 'selesai', 'Ganti lcd', 120000, 30000, '2021-07-10'),
+(24, 1, 'SV2107100002', 'dono', '012384123', 'oqqO a66', 'Speaker mati', 'proses', 'ganti speaker', 10000, 20000, '2021-07-10');
 
 -- --------------------------------------------------------
 
@@ -203,7 +226,8 @@ CREATE TABLE `supplier` (
 INSERT INTO `supplier` (`supplier_id`, `nama_supplier`, `no_telp`, `alamat`, `keterangan`, `created`, `updated`) VALUES
 (1, 'MrDrews Corporation', '6285223719870', 'Jl.Paseh No.69', 'Distributor Voucher', '2021-03-13 17:03:29', '2021-04-18 15:50:34'),
 (2, 'PT.MENCARI CINTA SEJATI', '08123456789', 'Jl.Amerika No.96', 'Distributor laptop', '2021-03-13 17:03:29', NULL),
-(5, 'Tiki Toko', '08978623512', 'Jl.Kebenaran', 'Supplier Kartu', '2021-03-13 21:07:44', '2021-04-18 15:50:22');
+(5, 'Tiki Toko', '08978623512', 'Jl.Kebenaran', 'Supplier Kartu', '2021-03-13 21:07:44', '2021-04-18 15:50:22'),
+(9, 'YUGIOH', '08771236112', 'Jl.Amerika serikta no 693', 'Supplier kartu', '2021-07-10 12:09:17', '2021-07-10 07:09:36');
 
 -- --------------------------------------------------------
 
@@ -252,7 +276,12 @@ INSERT INTO `t_detail` (`detail_id`, `invoice`, `kasir`, `tgl`, `total`, `cash`,
 (47, 'TR2105270011', 'Mohammad Rizals', '2021-05-27', 700000, 700000, 0),
 (48, 'TR2105270011', 'Mohammad Rizals', '2021-05-27', 700000, 700000, 0),
 (49, 'TR2105270011', 'Mohammad Rizals', '2021-05-27', 700000, 700000, 0),
-(50, 'TR2105270011', 'Mohammad Rizals', '2021-05-27', 700000, 700000, 0);
+(50, 'TR2105270011', 'Mohammad Rizals', '2021-05-27', 700000, 700000, 0),
+(51, 'TR2107080001', 'Andre', '2021-07-08', 100000, 100000, 0),
+(52, 'TR2107090001', 'Andre', '2021-07-09', 80000, 100000, 20000),
+(53, 'TR2107090002', 'Andre', '2021-07-09', 40000, 50000, 10000),
+(54, 'TR2107100001', 'Mohammad Rizals', '2021-07-10', 275000, 300000, 25000),
+(55, 'TR2107100002', 'Mohammad Rizals', '2021-07-10', 270000, 300000, 30000);
 
 -- --------------------------------------------------------
 
@@ -280,19 +309,19 @@ INSERT INTO `t_stock` (`stock_id`, `item_id`, `type`, `detail`, `supplier_id`, `
 (1, 1, 'in', 'Tambah Stock', 1, 20, '2021-03-16', '2021-03-16 14:47:15', 3),
 (3, 8, 'in', 'Tambah Stock', 1, 15, '2021-03-16', '2021-03-16 20:20:14', 3),
 (5, 8, 'in', 'Bonus', 1, 2, '2021-03-16', '2021-03-16 21:55:40', 3),
-(15, 16, 'in', 'Tambah Stock', 2, 6, '2021-03-17', '2021-03-17 20:36:13', 1),
-(16, 16, 'in', 'Bonus', 2, 7, '2021-03-17', '2021-03-17 20:37:04', 1),
-(17, 16, 'out', 'LOBA TEUING', NULL, 3, '2021-03-17', '2021-03-17 20:38:50', 1),
-(18, 16, 'out', 'Barang Rusak', NULL, 1, '2021-03-17', '2021-03-17 20:39:41', 1),
 (20, 10, 'in', 'Tambah Stock', 1, 25, '2021-03-22', '2021-03-22 22:35:24', 3),
 (21, 10, 'in', 'Bonus', 1, 5, '2021-03-22', '2021-03-22 22:36:29', 3),
 (23, 11, 'in', 'Tambah Stock', 1, 19, '2021-03-30', '2021-03-30 19:29:31', 1),
-(24, 5, 'in', 'Tambah Stock', 1, 12, '2021-04-13', '2021-04-13 20:35:55', 3),
 (25, 13, 'in', 'Tambah Stock', 1, 12, '2021-04-15', '2021-04-15 14:32:29', 3),
 (26, 1, 'in', 'Tambah Stock', 1, 21, '2021-04-18', '2021-04-18 15:03:53', 3),
 (27, 10, 'in', 'Tambah Stock', 1, 16, '2021-04-18', '2021-04-18 15:04:16', 3),
 (28, 11, 'in', 'Tambah Stock', 2, 21, '2021-04-18', '2021-04-18 15:04:39', 3),
-(29, 14, 'in', 'Tambah Stock', 1, 17, '2021-04-18', '2021-04-18 15:04:54', 3);
+(29, 14, 'in', 'Tambah Stock', 1, 17, '2021-04-18', '2021-04-18 15:04:54', 3),
+(30, 21, 'in', 'Tambah Stok', 1, 12, '2021-07-09', '2021-07-09 13:41:25', 3),
+(31, 19, 'in', 'Tambah Stok', 2, 6, '2021-07-09', '2021-07-09 13:41:44', 3),
+(32, 17, 'in', 'Tambah Stok', 2, 12, '2021-07-09', '2021-07-09 13:41:59', 3),
+(33, 18, 'in', 'Tambah Stok', 1, 4, '2021-07-09', '2021-07-09 14:11:56', 3),
+(34, 23, 'in', 'Tambah Stok', 1, 12, '2021-07-10', '2021-07-10 11:54:36', 1);
 
 -- --------------------------------------------------------
 
@@ -392,19 +421,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `p_category`
 --
 ALTER TABLE `p_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `p_item`
 --
 ALTER TABLE `p_item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `p_unit`
@@ -416,25 +445,25 @@ ALTER TABLE `p_unit`
 -- AUTO_INCREMENT for table `serv_data`
 --
 ALTER TABLE `serv_data`
-  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `supplier_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `t_detail`
 --
 ALTER TABLE `t_detail`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `t_stock`
 --
 ALTER TABLE `t_stock`
-  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `user`
