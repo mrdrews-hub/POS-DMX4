@@ -51,7 +51,7 @@
 
                                 <div class="form-group">
                                 <label for="detail">Detail</label>
-                                <input type="text" class="form-control shadow-sm" name="detail" id="detail" value="" required>
+                                <input type="text" class="form-control shadow-sm" name="detail" id="detail" value="" placeholder="Ex:Tambah Stock,Bonus etc..">
                                 <strong style="color: tomato;"></strong>
                                 </div>
 

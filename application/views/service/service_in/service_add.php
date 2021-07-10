@@ -12,7 +12,19 @@
                         <div class="col-md-5">                       
                         <form action="<?= site_url('service/process') ?>" method="post">
                                 <input type="hidden" name="service_id" value="<?= $row->service_id ?>">
-                            
+                            <?php if($page == 'edit') : ?>
+                            <div class="form-group">
+                                <label for="kode_service">Kode Service</label>
+                                <input type="text" class="form-control shadow-sm" name="kode_service" value="<?= $row->kode_service ?>"  readonly>
+                                <strong style="color: tomato;"></strong>
+                            </div>
+                            <?php elseif($page == 'add') :?>
+                                <div class="form-group">
+                                <label for="kode_service">Kode Service</label>
+                                <input type="text" class="form-control shadow-sm" name="kode_service" value="<?= $kodeServis ?>"  readonly>
+                                <strong style="color: tomato;"></strong>
+                            </div>
+                            <?php endif; ?>
                             <div class="form-group">
                                 <label for="customer">Nama Customer</label>
                                 <input type="text" class="form-control shadow-sm" name="customer" value="<?= $row->customer ?>"  required>

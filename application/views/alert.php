@@ -18,10 +18,19 @@
 });</script>
 <?php endif; ?>
 
-<?php if($this->session->has_userdata('error')): ?>
+<?php if($this->session->has_userdata('loginerror')): ?>
   <script>swal({
   title: "Oops!",
   text: "Username atau Password Tidak Ditemukan!",
+  icon: "error",
+  button: "Oke!",
+});</script>
+<?php endif; ?>
+
+<?php if($this->session->has_userdata('error')): ?>
+  <script>swal({
+  title: "Oops!",
+  text: "Barcode Sudah dipakai",
   icon: "error",
   button: "Oke!",
 });</script>

@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
 				echo "<script>alert('Login Berhasil')
 				window.location='".site_url('dashboard')."'</script>";		
 			}else{
-				$this->session->set_flashdata('error','');
+				$this->session->set_flashdata('loginerror','');
 				redirect('auth/login');
 			}
 		}

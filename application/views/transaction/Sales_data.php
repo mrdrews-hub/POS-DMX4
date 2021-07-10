@@ -9,7 +9,7 @@
             <div class="col-lg-4 col-md-5 col-sm-6 col-12 ">
                 <div class="card card-primary">
                     <div class="card-body">
-                    <form action="<?= site_url('Sales/add')?>" method="POST">
+                    <form action="<?= site_url('Sales/add')?>" method="post">
                     <div id="formserv">
                         <div class="form-group">
                         <label for="">Pilih Service</label>
@@ -23,11 +23,11 @@
                         </div>
                         <div class="form-group">
                         <label for="keterangan">keterangan</label>
-                        <input type="text" class="form-control" name="item" id="keterangan" readonly>
+                        <input type="text" class="form-control" name="itemServ" id="keterangan" readonly>
                         </div>
-                        <input type="hidden" value="1" name="qty">
+                        
 
-                        <input type="hidden" class="form-control" name="harga" id="harga" readonly>
+                        <input type="hidden" class="form-control" name="hargaServ" id="harga" readonly>
 
                         <input type="hidden" name="service_id" id="service_id">
 
@@ -107,7 +107,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                           
                             <?php $no=1; foreach ($this->cart->contents() as $items): ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
@@ -138,50 +137,7 @@
             </div>
         </div>   
         </div>
-        <!-- <div class="row justify-content-end mr-2">
-            <div class="col-lg-4 col-md-5 col-sm-8 col-12 ">
-                <div class="card card-success">
-                    <div class="card-body">
-
-                        <form action="sales/invoice" method="POST">
-                        <div class="form-group">
-                        <label>Grand Total</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                            </div>
-                            </div>
-                            <input type="text" class="form-control currency" value="<?= rupiah( $this->cart->total() )?>" id="total" readonly>
-                            <input type="hidden" name="grand_total" value="<?= $this->cart->total() ?>">
-                        </div>
-                        </div>
-
-                        <div class="form-group">
-                        <label>Cash</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                            <div class="input-group-text bg-warning">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            </div>
-                            <input type="number" name="cash" class="form-control currency" id="cash" data-type="currency">
-                        </div>
-                        </div>
-                        
-                        <div class="form-group">
-                        <label for="item">Kembalian</label>
-                        <input type="text" name="kembalian" class="form-control" id="change" value="0" readonly>
-                        </div>
-                                             
-                        <button type="submit" class="btn btn-success float-right"><i class="fas fa-paper-plane"></i> Proses</button>                      
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
-        </div> -->
+        
     </section>
 </div>
 
@@ -201,7 +157,7 @@
                                 <tr class="table-primary">
                                     <th>Barcode</th>
                                     <th>Nama Barang</th>
-                                    <th>Unit</th>
+                                    <th>Kategori</th>
                                     <th>Harga</th>
                                     <th>Stok</th>
                                     <th>Action</th>
@@ -212,7 +168,7 @@
                                 <tr>
                                     <td><?= $data->barcode ?></td>
                                     <td><?= $data->nama_item ?></td>
-                                    <td><?= $data->nama_unit ?></td>
+                                    <td><?= $data->nama_category ?></td>
                                     <td><?= rupiah($data->price) ?></td>
                                     <td><?= $data->stock ?></td>
                                     <td>
@@ -272,6 +228,7 @@ $(document).on('click','#selectitem',function(){
       <table class="table table-bordered table-hover text-center" id="mytable2">
                             <thead>                            
                                 <tr class="table-primary">
+                                    <th>Kode Service</th>
                                     <th>Customer</th>
                                     <th>Perangkat</th>
                                     <th>Keterangan</th>
@@ -282,13 +239,14 @@ $(document).on('click','#selectitem',function(){
                             <tbody>
                             <?php foreach($service as $key => $data) : ?>
                                 <tr>
+                                    <td><?= $data->kode_service ?></td>
                                     <td><?= $data->customer ?></td>
                                     <td><?= $data->perangkat ?></td>
                                     <td><?= $data->keterangan ?></td>
                                     <td><?=rupiah($data->harga + $data->jasa)?></td>
                                     <td>
                                         <button class="btn btn-success btn-sm" id="select"
-                                        data-sid="<?= $data->service_id ?>"
+                                        data-sid="<?= $data->kode_service ?>"
                                         data-harga="<?= $data->harga + $data->jasa ?>"
                                         data-keterangan="<?= $data->keterangan ?>"
                                         data-perangkat="<?= $data->perangkat ?>"

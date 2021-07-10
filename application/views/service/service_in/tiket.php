@@ -74,6 +74,10 @@
 <div class="container">
     <table>
         <tr>
+            <th>Kode Service :</th>
+            <td><?= $row->kodeServis ?></td>
+        </tr>
+        <tr>
             <th>Nama Customer :</th>
             <td><?= $row->customer ?></td>
         </tr>

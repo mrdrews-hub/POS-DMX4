@@ -26,30 +26,20 @@ class Sales extends CI_Controller {
     }
 
     public function add()
-    {   
-
-        $data = array(
-            array(
-                'id'      => $this->input->post('item_id'),
-                'qty'     => $this->input->post('qty'),
-                'price'   => $this->input->post('harga'),
-                'name'    => $this->input->post('item'),
-                "kode"    =>"item"
-            ),
-            array(
-                'id'      => $this->input->post('service_id'),
-                'qty'     => $this->input->post('qty'),
-                'price'   => $this->input->post('harga'),
-                'name'    => $this->input->post('item'),
-                'kode'    => "service"
-            )
-    );
+    {    
     $post = $this->input->post(NULL,TRUE);
     $id =   $this->input->post('item_id');
     $qty  = $this->input->post('qty');
     $stock = $this->item_m->get($id)->row()->stock;
     $service_id = $this->input->post('service_id');
-        if(isset($_POST['submit'])){
+        if( isset($_POST['submit']) ){
+            $data = array(
+                'id'      => $this->input->post('item_id'),
+                'qty'     => $this->input->post('qty'),
+                'price'   => $this->input->post('harga'),
+                'name'    => $this->input->post('item'),
+                'kode'    => "item"
+            );
             if($qty > $stock){
                 $this->session->set_flashdata('stkeror','');
                 redirect('sales');
@@ -59,14 +49,18 @@ class Sales extends CI_Controller {
                 $this->service_m->updateStatus($service_id);
                 redirect('sales');
             }           
-        }
-        if(isset($_POST['submitServ'])){
-            $this->cart->insert($data);
+        }else if( isset($_POST['submitServ']) ){
+            $dataServ = array(
+                'id'      => $this->input->post('service_id'),
+                'qty'     => 1,
+                'price'   => $this->input->post('hargaServ'),
+                'name'    => $this->input->post('itemServ'),
+                'kode'    => "service"
+            ); 
+            $this->cart->insert($dataServ);
             $this->service_m->updateStatus($service_id);
                 redirect('sales');
         }
-        
-
     }
 
     public function remove($rowid)

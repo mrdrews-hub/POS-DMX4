@@ -38,7 +38,7 @@
 
                             <div class="form-group">
                                 <label for="keterangan">Keterangan</label>
-                                <input type="text" class="form-control shadow-sm" name="keterangan" value="<?= $row->keterangan ?>" required>
+                                <input type="text" class="form-control shadow-sm" name="keterangan" value="<?= $row->keterangan ?>" placeholder="Ex:Supplier kuota,Supplier murah Etc.." required>
                                 <strong style="color: tomato;"></strong>
                             </div>
 

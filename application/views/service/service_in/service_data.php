@@ -44,6 +44,7 @@
                                     </td>
                                     <td class="w-25 text-center">
                                     <a href="" class="btn btn-info" data-toggle="modal" data-target="#modal-detail" id="details"
+                                      data-kodeService="<?= $data->kode_service ?>"
                                       data-customer="<?= $data->customer ?>"
                                       data-no_telp="<?= $data->no_telp ?>"
                                       data-perangkat="<?= $data->perangkat ?>"
@@ -86,6 +87,12 @@
         <div class="row">
               <input type="hidden" name="admin" id="adminHide">
               
+            <div class="col-md-12">
+            <div class="form-group">
+            <label for="kodeServis">Kode Service</label>
+            <input class="form-control" type="text" id="kodeServis" name="kodeServis" readonly>
+            </div>
+            </div>
 
             <div class="col-md-12">
             <div class="form-group">
@@ -165,7 +172,9 @@ $(document).ready(function(){
         let jasa = $(this).data('jasa')
         let created = $(this).data('created')
         let admin = $(this).data('admin')
+        let kodeServ = $(this).data('kodeservice')
 
+        
         $('#customer').val(customer);
         $('#no_telp').val(no_telp);
         $('#perangkat').val(perangkat);
@@ -173,9 +182,10 @@ $(document).ready(function(){
         $('#keterangan').val(keterangan);
         $('#harga').val(harga);
         $('#jasa').val(jasa);
+        $('#kodeServis').val(kodeServ);
+        $('#adminHide').val(admin);
         $('#date').html(created);
         $('#admin').html(admin);
-        $('#adminHide').val(admin);
 
         $('#modal-item').modal('hide');
 
